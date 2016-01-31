@@ -27,6 +27,9 @@
 ##      Return the above list
 
 makeCacheMatrix <- function(x = matrix()) {
+        ## Assumptions made:
+        ##      A square matrix is passed in
+        ##      the matrix is always invertible
         m <- NULL
         set <- function(y) {
                 x <<- y
@@ -49,7 +52,9 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-  
+        ## Assumptions made:
+        ##      A special "matrix" object is passed in as an argument
+        ##      The associated matrix is always invertible
         m <- x$getinverse()
         
         if(!is.null(m)) {
